@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Map.gd" type="Script" id=3]
 
 [node name="MainScene" type="Node2D"]
 
 [node name="Tiles" type="Node" parent="."]
+script = ExtResource( 3 )
 
 [node name="Tile" parent="Tiles" instance=ExtResource( 1 )]
 position = Vector2( 32, 32 )
@@ -548,4 +550,5 @@ position = Vector2( 1184, 544 )
 [node name="Tile180" parent="Tiles" instance=ExtResource( 1 )]
 position = Vector2( 1248, 544 )
 
-[node name="UI" parent="Tiles" instance=ExtResource( 2 )]
+[node name="UI" parent="." instance=ExtResource( 2 )]
+margin_bottom = 576.0
