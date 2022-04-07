@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Font/Roboto-Regular.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Font/Roboto-Bold.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Sprites/Mine.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Greenhouse.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/SolarPanel.png" type="Texture" id=5]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 576.0
+
+[node name="BG" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 144.0
+color = Color( 0.188235, 0.188235, 0.188235, 1 )
+
+[node name="EndTurnButton" type="Button" parent="."]
+margin_left = 1046.0
+margin_top = 34.0
+margin_right = 1246.0
+margin_bottom = 109.0
+custom_fonts/font = ExtResource( 2 )
+text = "End Turn "
+
+[node name="TurnText" type="Label" parent="."]
+margin_left = 876.0
+margin_top = 56.0
+margin_right = 1019.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 1 )
+text = "Turn 234"
+
+[node name="BuildingButtons" type="HBoxContainer" parent="."]
+margin_left = 34.0
+margin_top = 34.0
+margin_right = 270.0
+margin_bottom = 109.0
+alignment = 1
+
+[node name="MineButton" type="Button" parent="BuildingButtons"]
+margin_right = 76.0
+margin_bottom = 75.0
+icon = ExtResource( 3 )
+
+[node name="GreenhouseButton" type="Button" parent="BuildingButtons"]
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 75.0
+icon = ExtResource( 4 )
+
+[node name="SolarPanelButton" type="Button" parent="BuildingButtons"]
+margin_left = 160.0
+margin_right = 236.0
+margin_bottom = 75.0
+icon = ExtResource( 5 )
