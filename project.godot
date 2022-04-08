@@ -14,6 +14,10 @@ config/name="Strategy-Game"
 run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+BuildingData="*res://BuildingData.gd"
+
 [display]
 
 window/size/width=1280
