@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Font/Roboto-Regular.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Font/Roboto-Bold.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Sprites/Mine.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Greenhouse.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/SolarPanel.png" type="Texture" id=5]
+[ext_resource path="res://UI.gd" type="Script" id=6]
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 576.0
+script = ExtResource( 6 )
 
 [node name="BG" type="ColorRect" parent="."]
 margin_right = 1280.0
@@ -95,3 +97,5 @@ custom_colors/font_color = Color( 0.945098, 0.976471, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "25(+80)
 25(+80)"
+
+[connection signal="pressed" from="EndTurnButton" to="." method="_on_EndTurnButton_pressed"]
