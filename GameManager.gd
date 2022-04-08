@@ -20,6 +20,10 @@ var buildingToPlace : int
 onready var ui : Node = get_node("UI")
 onready var map : Node = get_node("Tiles")
 
+func _ready():
+	ui.update_resource_text()
+	ui.on_end_turn()
+	
 func on_select_building(buildingType):
 	currentlyPlacingBuilding = true
 	buildingToPlace = buildingType
@@ -53,8 +57,11 @@ func place_building(tileToPlaceOn):
 		texture = BuildingData.solarpanel.iconTexture
 		add_to_resource_per_turn(BuildingData.solarpanel.prodResource, BuildingData.solarpanel.prodResourceAmount)
 		add_to_resource_per_turn(BuildingData.solarpanel.upkeepResource, BuildingData.solarpanel.upkeepResourceAmount)
+	
+	map.place_building(tileToPlaceOn, texture)
+	ui.update_resource_text()
 
-func end_turn():
+func end_turn(): 
 	currentFood += foodPerTurn
 	currentMetal += metalPerTurn
 	currentOxygen +=  oxygenPerTurn
@@ -62,3 +69,7 @@ func end_turn():
 	
 	currentTurn += 1
 
+	ui.update_resource_text()
+	ui.on_end_turn()
+	
+	

@@ -22,4 +22,7 @@ func place_building(buildingTexture):
  
 
 func _on_Tile_input_event(viewport, event, shape_idx):
-	pass # Replace with function body. 
+	if event is InputEventMouseButton and event.pressed:
+		var gameManager = get_node("/root/MainScene")
+		if gameManager.currentlyPlacingBuilding and canPlaceBuilding:
+			gameManager.place_building(self)

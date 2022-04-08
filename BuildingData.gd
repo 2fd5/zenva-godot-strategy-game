@@ -4,7 +4,7 @@ enum BUILDING {BASE=0, MINE, GREENHOUSE, SOLARPANEL}
 enum RESOURCE {NONE, FOOD = 1, METAL=2, OXYGEN=3, ENERGY=4}
 
 var base = Building.new(BUILDING.BASE, preload("res://Sprites/Base.png"), RESOURCE.NONE, 0, RESOURCE.NONE, 0)
-var mine = Building.new(BUILDING.MINE, preload("res://Sprites/Mine.png"), RESOURCE.METAL, 1, RESOURCE.ENERGY, 1)
+var mine = Building.new(BUILDING.MINE, preload("res://Sprites/Mine.png"), RESOURCE.METAL, 1, RESOURCE.ENERGY, -1)
 var greenhouse = Building.new(BUILDING.GREENHOUSE, preload("res://Sprites/Greenhouse.png"), RESOURCE.FOOD, 1, RESOURCE.NONE, 0)
 var solarpanel = Building.new(BUILDING.SOLARPANEL, preload("res://Sprites/SolarPanel.png"), RESOURCE.ENERGY, 1, RESOURCE.NONE, 0)
 
