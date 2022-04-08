@@ -4,6 +4,13 @@ var allTiles : Array
 var tilesWithBuildings : Array 
 var tileSize : float = 64.0
 
+func _ready():
+	allTiles = get_tree().get_nodes_in_group("Tiles")
+	# find start tiles.
+	for x in range(allTiles.size()):
+		if allTiles[x].startTile == true:
+			place_building(allTiles[x], BuildingData.base.iconTexture)
+
 func get_tile_at_positon(position):
 	for x in range(allTiles.size()):
 		if allTiles[x].position == position and allTiles[x].hasBuilding == false:
@@ -30,3 +37,9 @@ func higlight_available_tiles():
 		if westTile != null :
 			westTile.toggle_highlight(true)
 		
+# place building on the map
+func place_building(tile, texture):
+	tilesWithBuildings.append(tile)
+	tile.place_building(texture)
+	
+	disable_tile_highlights()

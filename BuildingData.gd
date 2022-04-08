@@ -1,4 +1,6 @@
-enum BUILDING {BASE, MINE, GREENHOUSE, SOLARPANEL}
+extends Node
+
+enum BUILDING {BASE=0, MINE, GREENHOUSE, SOLARPANEL}
 enum RESOURCE {NONE, FOOD = 1, METAL=2, OXYGEN=3, ENERGY=4}
 
 var base = Building.new(BUILDING.BASE, preload("res://Sprites/Base.png"), RESOURCE.NONE, 0, RESOURCE.NONE, 0)
@@ -20,10 +22,10 @@ class Building:
 	# resource the building needs to be mentained
 	var upkeepResource : int = 0
 	var upkeepResourceAmount : int
-	func _init(type, iconTexture, prodResorce, prodResourceAmount, upkeepResource, upkeepResourceAmount):
+	func _init(type, iconTexture, prodResource, prodResourceAmount, upkeepResource, upkeepResourceAmount):
 		self.type = type
 		self.iconTexture = iconTexture
-		self.prodResorce = prodResorce
+		self.prodResource = prodResource
 		self.prodResourceAmount = prodResourceAmount
 		self.upkeepResource = upkeepResource
 		self.upkeepResourceAmount = upkeepResourceAmount

@@ -12,7 +12,7 @@ onready var buildingIcon : Sprite = get_node("BuildingIcon")
 func _ready():
 	 add_to_group("Tiles")
 
-func toggle_hightlight(toggle):
+func toggle_highlight(toggle):
 	highlight.visible = toggle
 	canPlaceBuilding = toggle
  
